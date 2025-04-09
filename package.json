@@ -1,0 +1,38 @@
+{
+  "name": "cordova-sqlite-triggers-plugin",
+  "version": "1.0.0",
+  "description": "Cordova plugin to create SQLite triggers for handling empty JSON objects",
+  "cordova": {
+    "id": "cordova-sqlite-triggers-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/cordova-sqlite-triggers-plugin.git"
+  },
+  "keywords": [
+    "cordova",
+    "sqlite",
+    "triggers",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova": ">=9.0.0",
+        "cordova-android": ">=8.0.0",
+        "cordova-ios": ">=5.0.0"
+      }
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cordova-sqlite-storage": "^6.0.0"
+  }
+}
