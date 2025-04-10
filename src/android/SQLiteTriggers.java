@@ -28,6 +28,7 @@ public class SQLiteTriggers extends CordovaPlugin {
   @Override
   public void initialize(final CordovaInterface cordova, final CordovaWebView webView) {
     super.initialize(cordova, webView);
+    System.out.println("CheckTheOrder2");
     // Use a Handler to post a delayed task on the main thread
     new Handler(Looper.getMainLooper()).postDelayed(() -> {
       // Ensure that the code runs on the UI thread
@@ -35,14 +36,15 @@ public class SQLiteTriggers extends CordovaPlugin {
         try {
           // JavaScript code to check for the existence of the SQLiteTriggers object and
           // call its method
-          final String JS_CHECK_AND_EXECUTE = "if (window.sqliteTriggers && typeof sqliteTriggers.updateAppStateAndCreateTriggers === 'function') { "
+          final String JS_CHECK_AND_EXECUTE = "if (window.sqliteTriggers && typeof sqliteTriggers.updateAppState === 'function') { "
               +
-              "  sqliteTriggers.updateAppStateAndCreateTriggers(); " +
+              "  sqliteTriggers.updateAppState(); " +
               "} else { " +
               "  console.error('SQLiteTriggers not available in JS context'); " +
               "}";
 
           // Check if the WebView is available before executing JavaScript
+          System.out.println("CheckTheOrder3");
           if (webView != null) {
             // Load the JavaScript code into the WebView
             webView.loadUrl("javascript:" + JS_CHECK_AND_EXECUTE);
