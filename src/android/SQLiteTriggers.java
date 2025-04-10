@@ -2,7 +2,9 @@ package com.example;
 
 import java.util.logging.Handler;
 
+import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CordovaWebView;
 
 import android.os.Looper;
 import android.util.Log;
@@ -24,7 +26,8 @@ public class SQLiteTriggers extends CordovaPlugin {
    * initialized before attempting to execute JavaScript code.
    */
   @Override
-  protected void pluginInitialize() {
+  public void initialize(final CordovaInterface cordova, final CordovaWebView webView) {
+    super.initialize(cordova, webView);
     // Use a Handler to post a delayed task on the main thread
     new Handler(Looper.getMainLooper()).postDelayed(() -> {
       // Ensure that the code runs on the UI thread
